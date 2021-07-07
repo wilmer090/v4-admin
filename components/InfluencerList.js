@@ -6,7 +6,7 @@ function InfluencerList({influencers}) {
   return (
     <div className={influencerStyle.grid}>
       {influencers.map(influencer => (
-        <InfluencerItem influencer={influencer} />
+        <InfluencerItem key={influencer.id} influencer={influencer} />
       ))}
     </div>
   )

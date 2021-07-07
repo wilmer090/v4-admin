@@ -29,15 +29,16 @@
 
 .title {
   margin: 0;
-  line-height: 1.15;
 }
 
-.nav li {
-  display: inline;
+.nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav li a {
-  padding: 8px 16px;
+  padding: 0px 16px;
 }
 
 .header {
@@ -46,7 +47,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  padding: 0 64px
+  padding: 16px 64px
 }
 
 .footer {

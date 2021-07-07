@@ -1,6 +1,7 @@
 import React from 'react'
 import layoutStyles from '../styles/Layout.module.css'
 import Link from 'next/link'
+import {Button} from 'antd'
 
 function Header() {
   return (
@@ -11,18 +12,14 @@ function Header() {
         </Link>
       </h3>
 
-      <ul className={layoutStyles.nav}>
-        <li>
-          <Link href="/about">
-            <a>About Us</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/contact">
-            <a>Contact</a>
-          </Link>
-        </li>
-      </ul>
+      <div className={layoutStyles.nav}>
+        <Link href="/about">
+          <Button type="text">About Us</Button>
+        </Link>
+        <Link href="/contact">
+          <Button type="text">Contact</Button>
+        </Link>
+      </div>
 
     </div>
   )

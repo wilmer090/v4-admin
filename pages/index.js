@@ -1,6 +1,10 @@
 import Head from 'next/head'
 import styles from '../styles/Layout.module.css'
 import InfluencerList from '../components/InfluencerList'
+import 'antd/dist/antd.css';
+import { Row, Col, Tag, Typography } from 'antd';
+
+const { Title } = Typography;
 
 export default function Home({influencers}) {
   return (
@@ -12,7 +16,18 @@ export default function Home({influencers}) {
       </Head>
 
       <main className={styles.main}>
-        <h1>I want to know the best influencers for</h1>
+        <Title>I want to know the best influencers for</Title>
+        <Row>
+          <Col span={24}>
+            <Tag color="blue">Covid-19</Tag>
+            <Tag color="blue">Politics</Tag>
+            <Tag color="blue">Economy</Tag>
+            <Tag color="blue">Healthcare</Tag>
+            <Tag color="blue">Business</Tag>
+            <Tag color="blue">Technology</Tag>
+            <Tag color="blue">+ Add Topic</Tag>
+          </Col>
+        </Row>
         <InfluencerList influencers={influencers} />
       </main>
     </div>
