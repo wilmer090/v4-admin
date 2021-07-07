@@ -1,12 +1,16 @@
+import React from 'react'
 import Head from 'next/head'
 import styles from '../styles/Layout.module.css'
 import InfluencerList from '../components/InfluencerList'
 import 'antd/dist/antd.css';
-import { Row, Col, Tag, Typography } from 'antd';
+import { Row, Col, Tag, Typography, Select, Card, Space, DatePicker } from 'antd';
 
 const { Title } = Typography;
+const { Option } = Select
+const provinceData = ['Philippines', 'Singapore'];
 
 export default function Home({influencers}) {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,17 +21,30 @@ export default function Home({influencers}) {
 
       <main className={styles.main}>
         <Title>I want to know the best influencers for</Title>
-        <Row>
-          <Col span={24}>
-            <Tag color="blue">Covid-19</Tag>
-            <Tag color="blue">Politics</Tag>
-            <Tag color="blue">Economy</Tag>
-            <Tag color="blue">Healthcare</Tag>
-            <Tag color="blue">Business</Tag>
-            <Tag color="blue">Technology</Tag>
-            <Tag color="blue">+ Add Topic</Tag>
-          </Col>
-        </Row>
+        <Space  direction="vertical" size={16}>
+          <Row>
+            <Col flex="1" style={{display: 'flex', justifyContent: 'center', alignItems: 'center',}}>
+              <Tag color="blue">Covid-19</Tag>
+              <Tag color="blue">Politics</Tag>
+              <Tag color="blue">Economy</Tag>
+              <Tag color="blue">Healthcare</Tag>
+              <Tag color="blue">Business</Tag>
+              <Tag color="blue">Technology</Tag>
+              <Tag color="blue">+ Add Topic</Tag>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col span={24} style={{padding: '8px', width: '800px', border: '1px solid whitesmoke', backgroundColor: "#fff", display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Select defaultValue={provinceData[0]} style={{ width: 120 }}>
+                  {provinceData.map(province => (
+                    <Option key={province}>{province}</Option>
+                  ))}
+                </Select>
+                <DatePicker onChange={() => {}} />
+            </Col>
+          </Row>
+        </Space>
         <InfluencerList influencers={influencers} />
       </main>
     </div>
