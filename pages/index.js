@@ -12,6 +12,7 @@ export default function Home({influencers}) {
       </Head>
 
       <main className={styles.main}>
+        <h1>I want to know the best influencers for</h1>
         <InfluencerList influencers={influencers} />
       </main>
     </div>
@@ -21,7 +22,6 @@ export default function Home({influencers}) {
 export const getStaticProps = async () => {
   const res = await fetch(`https://jsonplaceholder.typicode.com/users?_limit=6`)
   const influencers = await res.json()
-  console.log(influencers);
   return {
     props: {
       influencers

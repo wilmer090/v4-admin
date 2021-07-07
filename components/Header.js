@@ -5,11 +5,11 @@ import Link from 'next/link'
 function Header() {
   return (
     <div className={layoutStyles.header}>
-      <h1 className={layoutStyles.title}>
+      <h3 className={layoutStyles.title}>
         <Link href="/">
           <a>Profiler</a>
         </Link>
-      </h1>
+      </h3>
 
       <ul className={layoutStyles.nav}>
         <li>
