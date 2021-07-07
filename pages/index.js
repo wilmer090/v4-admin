@@ -21,31 +21,33 @@ export default function Home({influencers}) {
 
       <main className={styles.main}>
         <Title>I want to know the best influencers for</Title>
-        <Space  direction="vertical" size={16}>
-          <Row>
-            <Col flex="1" style={{display: 'flex', justifyContent: 'center', alignItems: 'center',}}>
-              <Tag color="blue">Covid-19</Tag>
-              <Tag color="blue">Politics</Tag>
-              <Tag color="blue">Economy</Tag>
-              <Tag color="blue">Healthcare</Tag>
-              <Tag color="blue">Business</Tag>
-              <Tag color="blue">Technology</Tag>
-              <Tag color="blue">+ Add Topic</Tag>
-            </Col>
-          </Row>
+        <Row align="middle" justify="center">
+          <Col flex="1">
+            <Tag color="blue">Covid-19</Tag>
+            <Tag color="blue">Politics</Tag>
+            <Tag color="blue">Economy</Tag>
+            <Tag color="blue">Healthcare</Tag>
+            <Tag color="blue">Business</Tag>
+            <Tag color="blue">Technology</Tag>
+            <Tag color="blue">+ Add Topic</Tag>
+          </Col>
+        </Row>
 
-          <Row>
-            <Col span={24} style={{padding: '16px', width: '900px', border: '1px solid whitesmoke', backgroundColor: "#fff", display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-                <Select defaultValue={provinceData[0]} style={{ width: 120 }}>
-                  {provinceData.map(province => (
-                    <Option key={province}>{province}</Option>
-                  ))}
-                </Select>
-                <DatePicker onChange={() => {}} />
-            </Col>
-          </Row>
-        </Space>
-        <InfluencerList influencers={influencers} />
+        <Row align="middle" justify="center" style={{ marginTop: 24, width: "80%"}}>
+          <Col span={24} style={{padding: '16px', border: '1px solid whitesmoke', backgroundColor: "#fff", display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+              <Select defaultValue={provinceData[0]} style={{ width: 120 }}>
+                {provinceData.map(province => (
+                  <Option key={province}>{province}</Option>
+                ))}
+              </Select>
+              <DatePicker onChange={() => {}} />
+          </Col>
+        </Row>
+
+        <Row align="middle" justify="center" style={{ width: "80%"}}>
+          <InfluencerList influencers={influencers} />
+        </Row>
+        
       </main>
     </div>
   )
