@@ -1,7 +1,7 @@
 import React from 'react'
 import layoutStyles from '../styles/Layout.module.css'
 import Link from 'next/link'
-import {Button} from 'antd'
+import { Button } from 'antd'
 
 function Header() {
   return (

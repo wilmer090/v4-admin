@@ -3,7 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Layout.module.css'
 import InfluencerList from '../components/InfluencerList'
 import 'antd/dist/antd.css';
-import { Row, Col, Tag, Typography, Select, Card, Space, DatePicker } from 'antd';
+import { Row, Col, Tag, Typography, Select, Space, DatePicker } from 'antd';
 
 const { Title } = Typography;
 const { Option } = Select
@@ -52,7 +52,8 @@ export default function Home({influencers}) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/users?_limit=6`)
+  const res = await fetch(`http://localhost:3000/influencers`)
+  console.log(res);
   const influencers = await res.json()
   return {
     props: {

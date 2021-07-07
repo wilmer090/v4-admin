@@ -13,7 +13,7 @@ const influencer = ({influencer}) => {
 
 // getServerSideProps
 export const getStaticProps = async (context) => {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/users/${context.params.id}`)
+    const res = await fetch(`http://localhost:3000/influencers/${context.params.id}`)
 
     const influencer = await res.json()
 
@@ -25,7 +25,7 @@ export const getStaticProps = async (context) => {
 }
 
 export const getStaticPaths = async () => {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/users`)
+    const res = await fetch(`http://localhost:3000/influencers`)
 
     const influencers = await res.json()
     const ids = influencers.map(influencer => influencer.id)
