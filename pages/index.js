@@ -35,7 +35,7 @@ export default function Home({influencers}) {
           </Row>
 
           <Row>
-            <Col span={24} style={{padding: '8px', width: '800px', border: '1px solid whitesmoke', backgroundColor: "#fff", display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Col span={24} style={{padding: '16px', width: '900px', border: '1px solid whitesmoke', backgroundColor: "#fff", display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
                 <Select defaultValue={provinceData[0]} style={{ width: 120 }}>
                   {provinceData.map(province => (
                     <Option key={province}>{province}</Option>
@@ -52,7 +52,7 @@ export default function Home({influencers}) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(`http://localhost:3000/influencers`)
+  const res = await fetch(`http://localhost:8000/influencers`)
   console.log(res);
   const influencers = await res.json()
   return {

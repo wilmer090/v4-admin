@@ -5,8 +5,8 @@ import InfluencerItem from './InfluencerItem'
 function InfluencerList({influencers}) {
   return (
     <div className={influencerStyle.grid}>
-      {influencers.map(influencer => (
-        <InfluencerItem key={influencer.id} influencer={influencer} />
+      {influencers.map((influencer, index) => (
+        <InfluencerItem key={influencer.id} influencer={influencer} index={index + 1} />
       ))}
     </div>
   )
