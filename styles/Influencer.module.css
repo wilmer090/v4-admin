@@ -2,10 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 3rem;
+  justify-content: center;
 }
 
 .card {
-  margin: 1rem;
+  margin: 8px;
   padding: 1.5rem;
   text-align: left;
   color: inherit;
@@ -13,7 +14,7 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  width: 30%;
+  width: 20%;
 }
 
 .card:hover,

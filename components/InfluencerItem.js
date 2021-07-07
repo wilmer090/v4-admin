@@ -16,7 +16,7 @@ function InfluencerItem({influencer, index}) {
         </div>
 
         <div style={{marginBottom: 32}}>
-          <h1 style={{paddingBottom: 0, marginBottom: 0}}>{influencer.name}</h1>
+          <h3 style={{paddingBottom: 0, marginBottom: 0}}>{influencer.name}</h3>
           <span>{influencer.email}</span>
         </div>
 
