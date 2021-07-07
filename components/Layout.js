@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../styles/Layout.module.css'
 import Header from './Header'
+import Footer from './Footer'
 
 function Layout({ children }) {
   return (
@@ -9,6 +10,7 @@ function Layout({ children }) {
       <main className={styles.main}>
         {children}
       </main>
+      <Footer />
     </div>
   )
 }
