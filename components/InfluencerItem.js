@@ -2,6 +2,7 @@ import React from "react";
 import influencerStyles from "../styles/Influencer.module.css";
 import Link from "next/link";
 import { Avatar, Row, Col, Progress } from "antd";
+import { ExclamationCircleFilled } from '@ant-design/icons';
 
 function InfluencerItem({ influencer, index, color }) {
   return (
@@ -40,14 +41,29 @@ function InfluencerItem({ influencer, index, color }) {
           <h3 style={{ paddingBottom: 0, marginBottom: 0 }}>
             {influencer.name}
           </h3>
-          <span>{influencer.email}</span>
+          <a href="" style={{color: "gray"}}>{influencer.email}</a>
         </div>
-        <Progress
-          strokeColor={color}
-          showInfo={false}
-          style={{ marginBottom: 16, marginTop: 16 }}
-          percent={influencer.progress}
-        />
+
+        <div
+          style={{ backgroundColor: "#F4F9FD", padding: 8, borderRadius: 5, marginTop: 16 }}
+        >
+          <Row>
+            <Col span={18}>
+              <span>Social Capital</span>&nbsp;
+              <ExclamationCircleFilled/>
+            </Col>
+            <Col style={{textAlign: "right"}} span={6}>
+              <span>{influencer.progress}/10</span>
+            </Col>
+          </Row>
+          <Progress
+            strokeColor={color}
+            showInfo={false}
+            style={{ marginBottom: 16 }}
+            percent={influencer.progress * 10}
+          />
+        </div>
+
         <Row align="middle" justify="center">
           <Col
             style={{

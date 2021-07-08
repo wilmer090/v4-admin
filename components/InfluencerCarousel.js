@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { Carousel, Row, Col } from "antd";
 import InfluencerItem from "./InfluencerItem";
 import influencerStyle from "../styles/Influencer.module.css";
-
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 const contentStyle = {
   height: "10px",
   width: "50px",
@@ -40,13 +40,13 @@ function InfluencerCarousel({ influencers, title, color }) {
             onClick={() => slider.current.next()}
             style={{ marginRight: "8px", cursor: "pointer" }}
           >
-            &larr;
+            <LeftOutlined />
           </span>
           <span
             onClick={() => slider.current.prev()}
             style={{ cursor: "pointer" }}
           >
-            &rarr;
+            <RightOutlined />
           </span>
         </Col>
       </Row>
@@ -69,7 +69,7 @@ function InfluencerCarousel({ influencers, title, color }) {
                   <InfluencerItem
                     key={influencer.id}
                     influencer={influencer}
-                    index={index + 1}
+                    index={index + 1 + i * 5}
                     color={color}
                   />
                 ))}

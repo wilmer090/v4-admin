@@ -3,13 +3,13 @@ import Head from "next/head";
 import styles from "../styles/Layout.module.css";
 import InfluencerList from "../components/InfluencerList";
 import "antd/dist/antd.css";
-import { Row, Col, Tag, Typography, Select, Space, DatePicker } from "antd";
+import { Row, Col, Tag, Typography, Select, Space } from "antd";
 import InfluencerCarousel from "../components/InfluencerCarousel";
 
 const { Title } = Typography;
 const { Option } = Select;
 const provinceData = ["Philippines", "Singapore"];
-
+const dateRangeData= ["Today", "This Week", "This Month"];
 export default function Home({ influencers }) {
 
   return (
@@ -55,7 +55,11 @@ export default function Home({ influencers }) {
                 <Option key={province}>{province}</Option>
               ))}
             </Select>
-            <DatePicker onChange={() => {}} />
+            <Select defaultValue={dateRangeData[0]} style={{ width: 120 }}>
+              {dateRangeData.map((date) => (
+                <Option key={date}>{date}</Option>
+              ))}
+            </Select>
           </Col>
         </Row>
 
