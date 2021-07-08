@@ -8,7 +8,8 @@
       "influence": 2,
       "interactions": 225,
       "name": "Percy Fay",
-      "rank": 83
+      "rank": 83,
+      "progress": 88
     },
     {
       "avatar": "https://cdn.fakercloud.com/avatars/Stievius_128.jpg",
@@ -18,7 +19,8 @@
       "influence": 3,
       "interactions": 310,
       "name": "Thelma Erdman",
-      "rank": 44
+      "rank": 44,
+      "progress": 12
     },
     {
       "avatar": "https://cdn.fakercloud.com/avatars/kerem_128.jpg",
@@ -28,7 +30,8 @@
       "influence": 4,
       "interactions": 421,
       "name": "Belinda Bode",
-      "rank": 72
+      "rank": 72,
+      "progress": 23
     },
     {
       "avatar": "https://cdn.fakercloud.com/avatars/tom_even_128.jpg",
@@ -38,7 +41,8 @@
       "influence": 2,
       "interactions": 492,
       "name": "Casey Kemmer",
-      "rank": 83
+      "rank": 83,
+      "progress": 90
     },
     {
       "avatar": "https://cdn.fakercloud.com/avatars/bagawarman_128.jpg",
@@ -48,7 +52,8 @@
       "influence": 6,
       "interactions": 598,
       "name": "Jeffrey Paucek",
-      "rank": 25
+      "rank": 25,
+      "progress": 77
     },
     {
       "avatar": "https://cdn.fakercloud.com/avatars/ryanjohnson_me_128.jpg",
@@ -58,7 +63,8 @@
       "influence": 8,
       "interactions": 295,
       "name": "Nina Strosin",
-      "rank": 84
+      "rank": 84,
+      "progress": 30
     },
     {
       "avatar": "https://cdn.fakercloud.com/avatars/jodytaggart_128.jpg",
@@ -68,7 +74,8 @@
       "influence": 0,
       "interactions": 714,
       "name": "Allison Nader DDS",
-      "rank": 13
+      "rank": 13,
+      "progress": 47
     },
     {
       "avatar": "https://cdn.fakercloud.com/avatars/mashaaaaal_128.jpg",
@@ -78,7 +85,8 @@
       "influence": 0,
       "interactions": 964,
       "name": "Ervin Ankunding",
-      "rank": 39
+      "rank": 39,
+      "progress": 20
     },
     {
       "avatar": "https://cdn.fakercloud.com/avatars/travishines_128.jpg",
@@ -88,7 +96,8 @@
       "influence": 10,
       "interactions": 571,
       "name": "Erica Runolfsson",
-      "rank": 68
+      "rank": 68,
+      "progress": 30
     },{
       "avatar": "https://cdn.fakercloud.com/avatars/_williamguerra_128.jpg",
       "email": "Price.Waelchi61@gmail.com",
@@ -97,7 +106,63 @@
       "influence": 10,
       "interactions": 636,
       "name": "Ismael Cremin",
-      "rank": 41
+      "rank": 41,
+      "progress": 80
+    },
+    {
+      "avatar": "https://cdn.fakercloud.com/avatars/kerem_128.jpg",
+      "email": "Arthur37@gmail.com",
+      "followers": 52,
+      "id": 7912262,
+      "influence": 4,
+      "interactions": 421,
+      "name": "Belinda Bode",
+      "rank": 72,
+      "progress": 23
+    },
+    {
+      "avatar": "https://cdn.fakercloud.com/avatars/tom_even_128.jpg",
+      "email": "Aurelie.Parisian@hotmail.com",
+      "followers": 507,
+      "id": 1325735,
+      "influence": 2,
+      "interactions": 492,
+      "name": "Casey Kemmer",
+      "rank": 83,
+      "progress": 90
+    },
+    {
+      "avatar": "https://cdn.fakercloud.com/avatars/bagawarman_128.jpg",
+      "email": "Justen50@hotmail.com",
+      "followers": 574,
+      "id": 6781414,
+      "influence": 6,
+      "interactions": 598,
+      "name": "Jeffrey Paucek",
+      "rank": 25,
+      "progress": 77
+    },
+    {
+      "avatar": "https://cdn.fakercloud.com/avatars/ryanjohnson_me_128.jpg",
+      "email": "Avery_Toy85@hotmail.com",
+      "followers": 708,
+      "id": 5838775,
+      "influence": 8,
+      "interactions": 295,
+      "name": "Nina Strosin",
+      "rank": 84,
+      "progress": 30
+    },
+    {
+      "avatar": "https://cdn.fakercloud.com/avatars/jodytaggart_128.jpg",
+      "email": "Jamarcus_Green32@hotmail.com",
+      "followers": 827,
+      "id": 9530535,
+      "influence": 0,
+      "interactions": 714,
+      "name": "Allison Nader DDS",
+      "rank": 13,
+      "progress": 47
     }
   ]
 }

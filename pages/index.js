@@ -1,15 +1,16 @@
-import React from 'react'
-import Head from 'next/head'
-import styles from '../styles/Layout.module.css'
-import InfluencerList from '../components/InfluencerList'
-import 'antd/dist/antd.css';
-import { Row, Col, Tag, Typography, Select, Space, DatePicker } from 'antd';
+import React from "react";
+import Head from "next/head";
+import styles from "../styles/Layout.module.css";
+import InfluencerList from "../components/InfluencerList";
+import "antd/dist/antd.css";
+import { Row, Col, Tag, Typography, Select, Space, DatePicker } from "antd";
+import InfluencerCarousel from "../components/InfluencerCarousel";
 
 const { Title } = Typography;
-const { Option } = Select
-const provinceData = ['Philippines', 'Singapore'];
+const { Option } = Select;
+const provinceData = ["Philippines", "Singapore"];
 
-export default function Home({influencers}) {
+export default function Home({ influencers }) {
 
   return (
     <div className={styles.container}>
@@ -33,33 +34,56 @@ export default function Home({influencers}) {
           </Col>
         </Row>
 
-        <Row align="middle" justify="center" style={{ marginTop: 24, width: "80%"}}>
-          <Col span={24} style={{padding: '16px', border: '1px solid whitesmoke', backgroundColor: "#fff", display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Select defaultValue={provinceData[0]} style={{ width: 120 }}>
-                {provinceData.map(province => (
-                  <Option key={province}>{province}</Option>
-                ))}
-              </Select>
-              <DatePicker onChange={() => {}} />
+        <Row
+          align="middle"
+          justify="center"
+          style={{ margin: "24px 0px", width: "88%" }}
+        >
+          <Col
+            span={24}
+            style={{
+              padding: "16px",
+              border: "1px solid whitesmoke",
+              backgroundColor: "#fff",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <Select defaultValue={provinceData[0]} style={{ width: 120 }}>
+              {provinceData.map((province) => (
+                <Option key={province}>{province}</Option>
+              ))}
+            </Select>
+            <DatePicker onChange={() => {}} />
           </Col>
         </Row>
 
-        <Row align="middle" justify="center" style={{ width: "80%"}}>
-          <InfluencerList influencers={influencers} />
-        </Row>
+        
+        <InfluencerCarousel influencers={influencers} title="Top Influencers" color="#0070f3" />
+
+
+        <InfluencerCarousel influencers={influencers} title="Top Change Drivers" color="#1ABC9C" />
+
+
+        <InfluencerCarousel influencers={influencers} title="High Engagment Superstars" color="#0070f3" />
+
+
+        <InfluencerCarousel influencers={influencers} title="Top Authorities" color="#1ABC9C" />
+
         
       </main>
     </div>
-  )
+  );
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(`http://localhost:8000/influencers`)
+  const res = await fetch(`http://localhost:8000/influencers`);
   console.log(res);
-  const influencers = await res.json()
+  const influencers = await res.json();
   return {
     props: {
-      influencers
-    }
-  }
-}
+      influencers,
+    },
+  };
+};

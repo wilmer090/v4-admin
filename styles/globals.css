@@ -15,3 +15,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.ant-carousel li{
+  background: #0070f3;
+}

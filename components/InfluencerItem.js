@@ -1,42 +1,94 @@
-import React from 'react'
-import influencerStyles from '../styles/Influencer.module.css'
-import Link from 'next/link'
-import { Avatar, Row, Col } from 'antd'
+import React from "react";
+import influencerStyles from "../styles/Influencer.module.css";
+import Link from "next/link";
+import { Avatar, Row, Col, Progress } from "antd";
 
-function InfluencerItem({influencer, index}) {
+function InfluencerItem({ influencer, index, color }) {
   return (
     <Link href="/influencer/[id]" as={`/influencer/${influencer.id}`}>
       <a className={influencerStyles.card}>
-        <div style={{display:'flex', justifyContent: 'center', alignItems:'center'}}>
-          <Avatar size={128} src={influencer.avatar} />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Avatar
+            style={{ marginTop: -90, border: "5px solid #fff" }}
+            size={160}
+            src={influencer.avatar}
+          />
         </div>
-        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-          <Avatar style={{ backgroundColor: "#3F8CFF", verticalAlign: 'middle' }} size="large">{index}</Avatar>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+          }}
+        >
+          <Avatar
+            style={{ backgroundColor: color, verticalAlign: "middle" }}
+            size="large"
+          >
+            {index}
+          </Avatar>
           <h2>{influencer.rank} &uarr;</h2>
         </div>
 
-        <div style={{marginBottom: 32}}>
-          <h3 style={{paddingBottom: 0, marginBottom: 0}}>{influencer.name}</h3>
+        <div>
+          <h3 style={{ paddingBottom: 0, marginBottom: 0 }}>
+            {influencer.name}
+          </h3>
           <span>{influencer.email}</span>
         </div>
-
-        <Row>
-          <Col span={8}>
+        <Progress
+          strokeColor={color}
+          showInfo={false}
+          style={{ marginBottom: 16, marginTop: 16 }}
+          percent={influencer.progress}
+        />
+        <Row align="middle" justify="center">
+          <Col
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            span={8}
+          >
             <h5>Followers</h5>
-            <h2>{influencer.followers}</h2>
+            <h3>{influencer.followers}k</h3>
           </Col>
-          <Col span={8}>
+          <Col
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            span={8}
+          >
             <h5>Interactions</h5>
-            <h2>{influencer.interactions}</h2>
+            <h3>{influencer.interactions}k</h3>
           </Col>
-          <Col span={8}>
+          <Col
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            span={8}
+          >
             <h5>Influence</h5>
-            <h2>{influencer.influence}</h2>
+            <h3>{influencer.influence}</h3>
           </Col>
         </Row>
-      </a>  
+      </a>
     </Link>
-  )
+  );
 }
 
-export default InfluencerItem
+export default InfluencerItem;
