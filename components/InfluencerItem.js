@@ -7,7 +7,7 @@ import { ExclamationCircleFilled } from '@ant-design/icons';
 function InfluencerItem({ influencer, index, color }) {
   return (
     <Link href="/influencer/[id]" as={`/influencer/${influencer.id}`}>
-      <a className={influencerStyles.card}>
+      <div className={influencerStyles.card}>
         <div
           style={{
             display: "flex",
@@ -102,7 +102,7 @@ function InfluencerItem({ influencer, index, color }) {
             <h3>{influencer.influence}</h3>
           </Col>
         </Row>
-      </a>
+      </div>
     </Link>
   );
 }

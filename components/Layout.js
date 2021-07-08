@@ -1,18 +1,21 @@
-import React from 'react'
-import styles from '../styles/Layout.module.css'
-import Header from './Header'
-import Footer from './Footer'
+import React from "react";
+import styles from "../styles/Layout.module.css";
+import Header from "./Header";
+import Footer from "./Footer";
+import Filter from "./Filter";
+import { withRouter } from "next/router";
 
-function Layout({ children }) {
+function Layout({ children, router }) {
   return (
     <div className={styles.container}>
       <Header />
       <main className={styles.main}>
+        {!["/about", "/contact"].includes(router.pathname) ? <Filter /> : null}
         {children}
       </main>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default Layout
+export default withRouter(Layout);

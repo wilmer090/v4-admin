@@ -6,10 +6,6 @@ import "antd/dist/antd.css";
 import { Row, Col, Tag, Typography, Select, Space } from "antd";
 import InfluencerCarousel from "../components/InfluencerCarousel";
 
-const { Title } = Typography;
-const { Option } = Select;
-const provinceData = ["Philippines", "Singapore"];
-const dateRangeData= ["Today", "This Week", "This Month"];
 export default function Home({ influencers }) {
 
   return (
@@ -21,47 +17,7 @@ export default function Home({ influencers }) {
       </Head>
 
       <main className={styles.main}>
-        <Title>I want to know the best influencers for</Title>
-        <Row align="middle" justify="center">
-          <Col flex="1">
-            <Tag color="blue">Covid-19</Tag>
-            <Tag color="blue">Politics</Tag>
-            <Tag color="blue">Economy</Tag>
-            <Tag color="blue">Healthcare</Tag>
-            <Tag color="blue">Business</Tag>
-            <Tag color="blue">Technology</Tag>
-            <Tag color="blue">+ Add Topic</Tag>
-          </Col>
-        </Row>
-
-        <Row
-          align="middle"
-          justify="center"
-          style={{ margin: "24px 0px", width: "88%" }}
-        >
-          <Col
-            span={24}
-            style={{
-              padding: "16px",
-              border: "1px solid whitesmoke",
-              backgroundColor: "#fff",
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-            }}
-          >
-            <Select defaultValue={provinceData[0]} style={{ width: 120 }}>
-              {provinceData.map((province) => (
-                <Option key={province}>{province}</Option>
-              ))}
-            </Select>
-            <Select defaultValue={dateRangeData[0]} style={{ width: 120 }}>
-              {dateRangeData.map((date) => (
-                <Option key={date}>{date}</Option>
-              ))}
-            </Select>
-          </Col>
-        </Row>
+        
 
         
         <InfluencerCarousel influencers={influencers} title="Top Influencers" color="#0070f3" />

@@ -15,7 +15,7 @@ function Footer() {
       </div>
       <hr />
       <div>
-        &copy; 2021 Media Meter Inc. ALl rights reserved.
+        &copy; 2021 Media Meter Inc. All rights reserved.
       </div>
     </div>
   )
