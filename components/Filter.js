@@ -22,7 +22,7 @@ function Filter() {
         <Col flex="1">
           <Space size={4} wrap>
             {tags.map((tag) => (
-              <Tag color="blue">{tag}</Tag>
+              <Tag key={tag} color="blue">{tag}</Tag>
             ))}
             <Tag color="blue">+ Add Topic</Tag>
           </Space>

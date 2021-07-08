@@ -10,7 +10,15 @@ function Layout({ children, router }) {
     <div className={styles.container}>
       <Header />
       <main className={styles.main}>
-        {!["/about", "/contact"].includes(router.pathname) ? <Filter /> : null}
+        {[
+          "/",
+          "/top-influencers",
+          "top-change-drivers",
+          "high-engagement-superstars",
+          "top-authorities",
+        ].includes(router.pathname) ? (
+          <Filter />
+        ) : null}
         {children}
       </main>
       <Footer />

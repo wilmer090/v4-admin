@@ -1,13 +1,10 @@
 import React from "react";
 import Head from "next/head";
 import styles from "../styles/Layout.module.css";
-import InfluencerList from "../components/InfluencerList";
 import "antd/dist/antd.css";
-import { Row, Col, Tag, Typography, Select, Space } from "antd";
 import InfluencerCarousel from "../components/InfluencerCarousel";
 
 export default function Home({ influencers }) {
-
   return (
     <div className={styles.container}>
       <Head>
@@ -17,21 +14,33 @@ export default function Home({ influencers }) {
       </Head>
 
       <main className={styles.main}>
-        
+        <InfluencerCarousel
+          influencers={influencers}
+          title="Top Influencers"
+          color="#0070f3"
+          path="/top-influencers"
+        />
 
-        
-        <InfluencerCarousel influencers={influencers} title="Top Influencers" color="#0070f3" />
+        <InfluencerCarousel
+          influencers={influencers}
+          title="Top Change Drivers"
+          color="#1ABC9C"
+          path="/top-change-drivers"
+        />
 
+        <InfluencerCarousel
+          influencers={influencers}
+          title="High Engagment Superstars"
+          color="#0070f3"
+          path="/high-engagement-superstars"
+        />
 
-        <InfluencerCarousel influencers={influencers} title="Top Change Drivers" color="#1ABC9C" />
-
-
-        <InfluencerCarousel influencers={influencers} title="High Engagment Superstars" color="#0070f3" />
-
-
-        <InfluencerCarousel influencers={influencers} title="Top Authorities" color="#1ABC9C" />
-
-        
+        <InfluencerCarousel
+          influencers={influencers}
+          title="Top Authorities"
+          color="#1ABC9C"
+          path="/top-authorities"
+        />
       </main>
     </div>
   );
@@ -39,7 +48,6 @@ export default function Home({ influencers }) {
 
 export const getStaticProps = async () => {
   const res = await fetch(`http://localhost:8000/influencers`);
-  console.log(res);
   const influencers = await res.json();
   return {
     props: {

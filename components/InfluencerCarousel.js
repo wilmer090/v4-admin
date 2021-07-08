@@ -1,31 +1,23 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { Carousel, Row, Col } from "antd";
 import InfluencerItem from "./InfluencerItem";
 import influencerStyle from "../styles/Influencer.module.css";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
-const contentStyle = {
-  height: "10px",
-  width: "50px",
-  background: "#364d79",
-};
+import Link from "next/link";
 
-function InfluencerCarousel({ influencers, title, color }) {
-  const [slide, setSlide] = useState(0);
-
+function InfluencerCarousel({ influencers, title, color, path }) {
   const slider = useRef();
 
   return (
     <div style={{ width: "100%" }}>
-      <Row
-        align="top"
-        justify="start"
-        style={{ marginTop: 24}}
-      >
+      <Row align="end" justify="end" style={{ marginTop: 24 }}>
         <Col span={18}>
-          <h1 style={{ textTransform: "uppercase", color }}>{title}</h1>
+          <h1 style={{ textTransform: "uppercase", color, paddinng: 0, margin: 0 }}>{title}</h1>
         </Col>
-        <Col style={{ textAlign: "right", paddingRight: "8px" }} span={6}>
-          <h4>View Full List</h4>
+        <Col style={{ padding: "0 8px 8px 0", textAlign: "right"}} span={6}>
+          <Link href={path}>
+            <span style={{textDecoration:"underline", textAlign:"end", textTransform:"uppercase"}}>View Full List</span>
+          </Link>
         </Col>
       </Row>
 
@@ -61,21 +53,17 @@ function InfluencerCarousel({ influencers, title, color }) {
           slider.current = ref;
         }}
         arrows
-        swipeToSlide 
+        swipeToSlide
         draggable
       >
         {[...Array(influencers.length / 5)].map((_, i) => (
           <div key={i} className={influencerStyle.grid}>
-            <Row
-              align="top"
-              justify="space-around"
-            >
+            <Row align="top" justify="space-around">
               {influencers
                 .slice(i * 5, (i + 1) * 5)
                 .map((influencer, index) => (
                   <Col xs={24} sm={24} md={12} lg={4} xl={4} key={index}>
                     <InfluencerItem
-                      key={influencer.id}
                       influencer={influencer}
                       index={index + 1 + i * 5}
                       color={color}
