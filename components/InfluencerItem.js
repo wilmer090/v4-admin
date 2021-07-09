@@ -1,8 +1,14 @@
 import React from "react";
 import influencerStyles from "../styles/Influencer.module.css";
 import Link from "next/link";
-import { Avatar, Row, Col, Progress } from "antd";
-import { ExclamationCircleFilled } from '@ant-design/icons';
+import { Avatar, Row, Col, Progress, Tooltip } from "antd";
+import {
+  ExclamationCircleFilled,
+  ArrowDownOutlined,
+  ArrowUpOutlined,
+  RetweetOutlined,
+} from "@ant-design/icons";
+import LineChart from "./LineChart";
 
 function InfluencerItem({ influencer, index, color }) {
   return (
@@ -30,29 +36,56 @@ function InfluencerItem({ influencer, index, color }) {
         >
           <Avatar
             style={{ backgroundColor: color, verticalAlign: "middle" }}
-            size="large"
+            size={32}
           >
             {index}
           </Avatar>
-          <h2>{influencer.rank} &uarr;</h2>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "row",
+            }}
+          >
+            <span style={{ fontSize: "12px" }}>({influencer.rank})</span>
+            <span>
+              {influencer.rank < influencer.prevRank ? (
+                <ArrowUpOutlined style={{ color: "green", fontSize: "16px" }} />
+              ) : influencer.rank === influencer.prevRank ? (
+                <RetweetOutlined style={{ fontSize: "16px" }} />
+              ) : (
+                <ArrowDownOutlined style={{ color: "red", fontSize: "16px" }} />
+              )}
+            </span>
+          </div>
         </div>
 
         <div>
           <h3 style={{ paddingBottom: 0, marginBottom: 0 }}>
             {influencer.name}
           </h3>
-          <a href="" style={{color: "gray"}}>{influencer.email}</a>
+          <a href="" style={{ color: "gray" }}>
+            {influencer.email}
+          </a>
         </div>
 
         <div
-          style={{ backgroundColor: "#F4F9FD", padding: 8, borderRadius: 5, marginTop: 16 }}
+          style={{
+            backgroundColor: "#F4F9FD",
+            padding: 8,
+            borderRadius: 5,
+            marginTop: 16,
+          }}
         >
           <Row>
             <Col span={18}>
-              <span>Social Capital</span>&nbsp;
-              <ExclamationCircleFilled/>
+              <span style={{marginRight: 8}}>Social Capital</span>
+              <Tooltip placement="right" title="Lorem Ipsum is simply dummy text of the printing and typesetting industry." color={color}>
+                <ExclamationCircleFilled />
+              </Tooltip>
             </Col>
-            <Col style={{textAlign: "right"}} span={6}>
+            <Col style={{ textAlign: "right" }} span={6}>
               <span>{influencer.progress}/10</span>
             </Col>
           </Row>
@@ -62,6 +95,7 @@ function InfluencerItem({ influencer, index, color }) {
             style={{ marginBottom: 16 }}
             percent={influencer.progress * 10}
           />
+          <LineChart data={influencer.lineChartData} color={color} />
         </div>
 
         <Row align="middle" justify="center">

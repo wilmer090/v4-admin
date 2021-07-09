@@ -12,7 +12,7 @@ const influencer = ({influencer}) => {
 }
 
 // getServerSideProps
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const res = await fetch(`http://localhost:8000/influencers/${context.params.id}`)
 
     const influencer = await res.json()
@@ -23,18 +23,29 @@ export const getStaticProps = async (context) => {
         }
     }
 }
+// export const getStaticProps = async (context) => {
+//     const res = await fetch(`http://localhost:8000/influencers/${context.params.id}`)
 
-export const getStaticPaths = async () => {
-    const res = await fetch(`http://localhost:8000/influencers`)
+//     const influencer = await res.json()
 
-    const influencers = await res.json()
-    const ids = influencers.map(influencer => influencer.id)
-    const paths = ids.map(id => ({params: {id: id.toString()}}))
+//     return {
+//         props: {
+//             influencer
+//         }
+//     }
+// }
+
+// export const getStaticPaths = async () => {
+//     const res = await fetch(`http://localhost:8000/influencers`)
+
+//     const influencers = await res.json()
+//     const ids = influencers.map(influencer => influencer.id)
+//     const paths = ids.map(id => ({params: {id: id.toString()}}))
     
-    return {
-        paths,
-        fallback: false
-    }
+//     return {
+//         paths,
+//         fallback: false
+//     }
 
-}
+// }
 export default influencer

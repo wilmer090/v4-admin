@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "antd/dist/antd.css";
 import InfluencerList from "../../components/InfluencerList";
 
-const COLOR = "#1ABC9C";
+const COLOR = "#0070f3";
 
 export default function index({ influencers, total }) {
   const [data, setData] = useState(influencers);
@@ -28,7 +28,7 @@ export default function index({ influencers, total }) {
       handleClick={handleClick}
       COLOR={COLOR}
       total={total}
-      title="Top Change Drivers"
+      title="Top Fast Influencers"
     />
   );
 }

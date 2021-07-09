@@ -9,14 +9,32 @@ function InfluencerCarousel({ influencers, title, color, path }) {
   const slider = useRef();
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "100%", marginLeft: "-32px" }}>
       <Row align="end" justify="end" style={{ marginTop: 24 }}>
         <Col span={18}>
-          <h1 style={{ textTransform: "uppercase", color, paddinng: 0, margin: 0 }}>{title}</h1>
+          <h1
+            style={{
+              textTransform: "uppercase",
+              color,
+              paddinng: 0,
+              margin: 0,
+            }}
+          >
+            {title}
+          </h1>
         </Col>
-        <Col style={{ padding: "0 8px 8px 0", textAlign: "right"}} span={6}>
+        <Col style={{ padding: "0 8px 8px 0", textAlign: "right" }} span={6}>
           <Link href={path}>
-            <span style={{textDecoration:"underline", textAlign:"end", textTransform:"uppercase"}}>View Full List</span>
+            <span
+              style={{
+                textDecoration: "underline",
+                textAlign: "end",
+                textTransform: "uppercase",
+                cursor: "pointer",
+              }}
+            >
+              View Full List
+            </span>
           </Link>
         </Col>
       </Row>
@@ -58,11 +76,23 @@ function InfluencerCarousel({ influencers, title, color, path }) {
       >
         {[...Array(influencers.length / 5)].map((_, i) => (
           <div key={i} className={influencerStyle.grid}>
-            <Row align="top" justify="space-around">
+            <Row
+              align="top"
+              justify="space-around"
+              style={{ position: "relative" }}
+            >
               {influencers
                 .slice(i * 5, (i + 1) * 5)
                 .map((influencer, index) => (
-                  <Col xs={24} sm={24} md={12} lg={4} xl={4} key={index}>
+                  <Col
+                    xs={24}
+                    sm={24}
+                    md={12}
+                    lg={4}
+                    xl={4}
+                    key={index}
+                    className={influencerStyle.card2}
+                  >
                     <InfluencerItem
                       influencer={influencer}
                       index={index + 1 + i * 5}

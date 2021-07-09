@@ -12,10 +12,10 @@ function Layout({ children, router }) {
       <main className={styles.main}>
         {[
           "/",
-          "/top-influencers",
-          "top-change-drivers",
-          "high-engagement-superstars",
-          "top-authorities",
+          "/top-fast-influencers",
+          "/top-change-drivers",
+          "/high-engagement-superstars",
+          "/top-authorities",
         ].includes(router.pathname) ? (
           <Filter />
         ) : null}

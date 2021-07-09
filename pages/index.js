@@ -3,8 +3,9 @@ import Head from "next/head";
 import styles from "../styles/Layout.module.css";
 import "antd/dist/antd.css";
 import InfluencerCarousel from "../components/InfluencerCarousel";
-
+import { DUMMY_INFLUENCER } from "../dummyData";
 export default function Home({ influencers }) {
+  console.log(JSON.stringify(DUMMY_INFLUENCER));
   return (
     <div className={styles.container}>
       <Head>
@@ -18,7 +19,7 @@ export default function Home({ influencers }) {
           influencers={influencers}
           title="Top Influencers"
           color="#0070f3"
-          path="/top-influencers"
+          path="/top-fast-influencers"
         />
 
         <InfluencerCarousel
@@ -46,9 +47,10 @@ export default function Home({ influencers }) {
   );
 }
 
-export const getStaticProps = async () => {
-  const res = await fetch(`http://localhost:8000/influencers`);
+export const getServerSideProps = async () => {
+  const res = await fetch(`http://localhost:8000/influencers?_limit=15`);
   const influencers = await res.json();
+
   return {
     props: {
       influencers,
