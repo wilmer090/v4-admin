@@ -8,9 +8,10 @@ const LineChart = ({ data, color }) => {
 
   const options = {
     chart: {
-      height: 40,
+      height: 50,
       backgroundColor: "transparent",
-      padding: 0
+      padding: 0,
+      margin: 5
     },
     title: {
       text: "",

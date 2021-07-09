@@ -80,8 +80,12 @@ function InfluencerItem({ influencer, index, color }) {
         >
           <Row>
             <Col span={18}>
-              <span style={{marginRight: 8}}>Social Capital</span>
-              <Tooltip placement="right" title="Lorem Ipsum is simply dummy text of the printing and typesetting industry." color={color}>
+              <span style={{ marginRight: 8 }}>Social Capital</span>
+              <Tooltip
+                placement="right"
+                title="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                color={color}
+              >
                 <ExclamationCircleFilled />
               </Tooltip>
             </Col>
@@ -92,10 +96,23 @@ function InfluencerItem({ influencer, index, color }) {
           <Progress
             strokeColor={color}
             showInfo={false}
-            style={{ marginBottom: 16 }}
             percent={influencer.progress * 10}
           />
-          <LineChart data={influencer.lineChartData} color={color} />
+          <Row justify="center" align="center">
+            <Col span={18}>
+              <LineChart data={influencer.lineChartData} color={color} />
+            </Col>
+            <Col
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+              span={6}
+            >
+              <span style={{ fontSize: 9, color: "gray" }}>Past 24h</span>
+            </Col>
+          </Row>
         </div>
 
         <Row align="middle" justify="center">
