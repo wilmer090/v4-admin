@@ -5,7 +5,7 @@ import "antd/dist/antd.css";
 import InfluencerCarousel from "../components/InfluencerCarousel";
 import { DUMMY_INFLUENCER } from "../dummyData";
 export default function Home({ influencers }) {
-  console.log(JSON.stringify(DUMMY_INFLUENCER));
+  // console.log(JSON.stringify(DUMMY_INFLUENCER));
   return (
     <div className={styles.container}>
       <Head>

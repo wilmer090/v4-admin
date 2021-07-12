@@ -3,6 +3,8 @@ import Link from 'next/link'
 import layoutStyles from '../styles/Layout.module.css'
 
 function Footer() {
+  let year = new Date().getFullYear() // display current year
+
   return (
     <div className={layoutStyles.footer}>
       <div>
@@ -15,7 +17,7 @@ function Footer() {
       </div>
       <hr />
       <div>
-        &copy; 2021 Media Meter Inc. All rights reserved.
+        &copy; {year} Media Meter Inc. All rights reserved.
       </div>
     </div>
   )
